@@ -1,0 +1,16 @@
+<main class="container">
+    <h2 class="center">Affichage de la base de données avec suppression et modification</h2>
+    <table>
+        <tr>
+            <td>nom</td>
+            <td>mail</td>
+        </tr>
+    <?php
+    foreach ($users as $user): ?>
+        <tr>
+            <td><?= $user['nom']; ?></td>
+            <td><?= $user['mail']; ?><a href="delete_post.php?id=<?= $user['idUser'] ?>">X</a><a href="edit_post.php?id=<?= $user['idUser'] ?>"><i class="fas fa-cog"></i></a></td>   
+        </tr>
+    <?php endforeach ?>    
+    </table>  
+</main>
