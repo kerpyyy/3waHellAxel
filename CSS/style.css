@@ -1,0 +1,847 @@
+/* *****************************************************************
+                            GLOBAL
+***************************************************************** */
+
+*  {
+    box-sizing:border-box;
+}
+html {
+    font-size:62.5%;
+}
+body {
+    font-size:1.6rem;
+    margin:0;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.3px;
+    line-height: 26px;
+}
+
+img {
+    max-width:100%;
+    height:auto;
+}
+
+a{
+    color:black;
+}
+
+h2,h4{
+    color: rgb(71, 66, 153);
+    padding: 0;
+}
+
+.text_align{
+    text-align: center;
+    font-size: 1.6em;
+}
+
+.img_centre{
+    text-align: center;
+    padding-top: 60px;
+}
+
+/* *****************************************************************
+                            HEADER
+***************************************************************** */
+
+/* Optimisation de l'ouverture fermeture du bouton pour le menu nav. */
+
+#menu-button{
+    position:absolute;
+    width:50px;
+    height:50px;
+    background-color:rgb(71, 66, 153);
+    color: white;
+    text-align: center;
+    border-radius: 100px;
+    font-size:40px;
+    transition:all .5s;
+    font-family: Arial;
+    line-height: 45px; 
+  }
+  
+
+#menu-button::after{
+    content:'×';
+}
+
+#menu-button.close{
+    color: white;
+    border: 2px solid white;
+    text-align: center;
+    border-radius: 100px;
+    background-color:rgb(71, 66, 153);
+    padding: 7px;
+}
+
+#menu-button.close::after{
+    content:'≡';
+}
+
+#menu{
+    transition:transform .3s;
+    position:absolute;
+    width:auto;
+    transform:translateY(-1000px);
+    display: flex;
+    flex-direction: column;
+    font-size: 4rem;
+    background-color: rgb(71, 66, 153, 0.8);
+    padding: 40px;
+    line-height: 35px;
+    border: 2px solid rgb(71, 66, 153);
+    border-radius: 100px;
+}
+
+#menu a{
+    color: white;
+    text-decoration: none;
+}
+
+#menu.show-menu{
+    transform:translateY(250px);
+}
+
+/* -------------Fin de l'optimisation */
+
+.header{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    border-bottom: 2.5px solid rgb(71, 66, 153);
+    padding:10px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 98;
+}
+
+.header img{
+    display: block;
+    height:100%;
+}
+
+.trad{
+    display: flex;
+    width: 50%;
+}
+
+.trad a{
+    width: 35px;
+    text-align: center;
+    margin: 5px;
+    border: 2px solid rgb(71, 66, 153);
+    border-radius: 100px;
+    padding: 3px;
+    color: rgb(71, 66, 153);
+    text-decoration: none;
+}
+
+.conetcom{
+    text-align: center;
+    width: 100%;
+}
+
+.conetcom img{
+    width: 50%;
+    margin: unset;
+}
+
+
+/* *****************************************************************
+                            INDEX
+***************************************************************** */
+
+
+.slides li{
+    position: relative;
+    text-align: center;
+}
+
+.slides p{
+    font-size: 3rem;
+    color:white;
+    font-weight: bold;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ 
+.center{
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+div.information.center{
+    padding: 10px 0px 20px 0px;
+}
+
+.information p{
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.information h2:first-child{
+    font-size: 2em;
+    padding-bottom: 25px;
+    line-height: 50px;
+}
+
+.autoplay img{
+    width: 50%;
+}
+
+/* div */
+
+div .about,
+section{
+	padding: 80px 0px 0px 0;
+}
+
+.colored-line {
+	background: rgb(71, 66, 153);
+	display: block;
+	margin: auto;
+    height: 1px;
+    width: 25%;
+    z-index: 1;
+	margin-bottom: 5px;
+}
+
+.about article img {
+	height: 175px;
+	width: 300px;
+    padding-bottom: 20px;
+}
+
+.about h3{
+    color: rgb(71, 66, 153);
+}
+
+.about article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+    padding-bottom: 80px;  
+}
+
+.about article a{
+    color: rgb(71, 66, 153);
+}
+
+.h2_partenaire{
+    padding-left: 100px;
+}
+
+.adress{
+    width: 100%;
+}
+
+.adress div{
+    color:rgb(71, 66, 153);
+    display:block;
+    border-bottom:2px dashed rgb(71, 66, 153);
+    text-align:center;
+    padding-bottom:20px;
+    width:35%;
+    margin: auto;
+    line-height: 25px;
+    font-size: 1.6rem;
+    
+}
+
+.adress div a, .adress div p{
+    color: black;
+}
+
+.adress div:last-child{
+    border:none;
+}
+
+.adress div:first-child{
+    border-top: 2px dashed rgb(71, 66, 153);
+    padding-top: 15px;
+}
+
+
+/* *****************************************************************
+                           FOOTER
+***************************************************************** */
+
+footer{
+    display: flex;
+    background-color: #F8F8F8;
+    border-top: 2px solid #EFEFEF;
+    padding: 0px 20px;
+}
+
+footer .reseaux{
+    width: 40px;
+    padding: 10px 0 0 10px;
+}
+
+
+/* *****************************************************************
+                    CSS - ABOUT
+***************************************************************** */
+
+main .qui_sommes_nous{
+    background: url(../images/bureau.jpg) repeat center center;
+	background-size: cover;
+	height: 700px;
+}
+
+.metier .service h4{
+    display: none;
+}
+
+.texte_accueil h1{
+    font-size: 4rem;
+    color: rgb(71, 66, 153);
+    text-align: center;
+    line-height: 50px;
+}
+
+.texte_accueil p{
+    text-align: center;
+    padding:  10px 10px;
+}
+
+.textmain.qui_sommes_nous p{
+    font-size: 1.8rem;
+    padding-left: 40px;
+}
+
+.information img{
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.information h2{
+    color: rgb(71, 66, 153);
+    text-align: center;
+}
+
+/* Partie metier -------------- */
+
+.metier p, .metier h4{
+    border-left:2px solid rgb(71, 66, 153);
+    border-right:2px solid rgb(71, 66, 153);
+    text-align: center;
+    padding: 7px;
+}
+.metier p{
+    margin-top: -23px;
+}
+
+.metier h4{
+    margin-top: -10px;
+    padding: 25px;
+    color: rgb(71, 66, 153);
+}
+
+.metier ul{
+    padding:0px;
+    list-style: none;
+}
+
+.metier li{
+    padding: 0 40px;
+    text-align: left;
+}
+
+.metier h2{
+    text-align: center;
+    padding-bottom: 25px;
+    color: rgb(71, 66, 153);
+}
+
+
+.metier div{
+    padding-bottom: 40px;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+#p1, #p2, #p3, #p4, #p5, #p6{
+    margin-top: -18px;
+    padding:5px;
+    border-left:2px solid rgb(71, 66, 153);
+    border-right:2px solid rgb(71, 66, 153);
+    border-bottom:2px solid rgb(71, 66, 153);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.autoplay{
+    border-top:  2px solid rgb(71, 66, 153);;
+}
+
+.autoplay img{
+    width: 100%;
+    padding:0 10px;
+}
+
+.autoplay{
+    padding: 50px 25px;
+}
+
+
+
+/* *****************************************************************
+                            CSS - Job
+***************************************************************** */
+
+main .job{
+    background: url(../images/metiers.jpg) repeat center center;
+	background-size: cover;
+	height: 700px;
+}
+
+.carriere .direction{
+    font-size: 4rem;
+    color:black;
+    border:none;
+}
+
+
+.carriere i{
+    font-size: 4rem;
+    color:rgb(71, 66, 153);
+    border:2px solid rgb(71, 66, 153);
+    border-radius: 20px;
+    padding: 20px;
+    width: 100px;
+    text-align: center;
+}
+
+.carriere a, .carriere small{
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.carriere div{
+    padding: 20px;
+    text-align: center;
+}
+
+.middle{
+    text-align: center;
+}
+
+.information_job{
+    padding: 150px 0px 80px 0px;
+}
+
+/* *****************************************************************
+                  PARTIE EMPLOIS ( DETAIL METIER ) 
+***************************************************************** */
+
+.emplois{
+    background: url(../images/contrat.jpg) repeat center center;
+	background-size: cover;
+	height: 700px;
+}
+
+.emplois_info{
+    padding: 60px 0px 10px 0px;
+}
+
+.emplois_info h2, .emplois_info h3, .emplois_info i{
+    color: rgb(71, 66, 153);
+    font-size: 3rem;
+    padding-right: 10px;
+}
+
+.return i{
+    font-size: 4rem;
+    color: rgb(71, 66, 153);
+    padding-top: 25px;
+}
+
+.button_join{
+    font-size: 2.5rem;
+    border: 2px solid rgb(71, 66, 153);
+    border-radius: 100px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.button_join a{
+    color: rgb(71, 66, 153);
+    text-decoration: none;
+}
+
+
+/* *****************************************************************
+                         CSS - CONTACT
+***************************************************************** */
+
+.formulaires{
+	max-width: 500px;
+	margin: 10px auto;
+	padding: 16px;
+	background: #F7F7F7;
+}
+.formulaires h1{
+	background: rgb(71, 66, 153);
+	padding: 20px 0;
+	font-size: 2rem;
+	font-weight: 300;
+	text-align: center;
+	color: #fff;
+	margin: -16px -16px 16px -16px;
+}
+
+.question{
+    text-align: center;
+}
+.formulaires input[type="text"],
+.formulaires input[type="password"],
+.formulaires input[type="email"],
+.formulaires textarea,
+.formulaires select 
+{
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	background: #fff;
+	margin-bottom: 4%;
+	border: 1px solid #ccc;
+	padding: 3%;
+	color: #555;
+}
+.formulaires input[type="text"]:focus,
+.formulaires input[type="password"]:focus,
+.formulaires input[type="email"]:focus,
+.formulaires textarea:focus,
+.formulaires select:focus
+{
+	box-shadow: 0 0 5px rgb(71, 66, 153);
+	padding: 3%;
+	border: 1px solid rgb(71, 66, 153);
+}
+
+.formulaires input[type="submit"]{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	padding: 3%;
+	background: rgb(71, 66, 153);
+	border-bottom: 2px solid rgb(71, 66, 153);
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;	
+	color: #fff;
+}
+.formulaires input[type="submit"]:hover{
+	background: rgb(71, 66, 153);
+}
+
+.photo_bureau{
+    padding: 60px 0 60px 0;
+    width: 100%;
+    height: 500px;
+}
+
+#map{
+    height:450px;
+    width:95%;
+    border: 2px solid rgb(71, 66, 153);
+    margin: auto;
+}
+
+                                /* *****************************************************************
+                                                        CSS - DESKTOP
+                                ***************************************************************** */
+
+@media screen and (min-width: 1025px){
+
+body{
+    font-size:2rem;
+    line-height: 40px;
+    background-color: #F3F3F3; 
+}
+
+.container{
+    background-color: #fff;
+    max-width: 1582px;
+    margin: auto;
+}
+
+.header{
+    background-color: #fff;
+    max-width: 1582px;
+    margin: auto;
+}
+
+footer p{
+    font-size: 1.5rem;
+}
+
+/* *****************************************************************
+                         CSS - DESKTOP INDEX
+***************************************************************** */
+
+.trad a{
+    width: 40px;
+}
+
+.header{
+    padding: 20px;
+}
+
+.conetcom{ 
+    text-align: center;
+    width: 82%;
+}
+
+.conetcom img{
+    width: 40%;
+    margin: unset;
+}
+
+.slides li{
+    position: relative;
+    text-align: center;
+    color: red;
+}
+
+.slides p{
+    font-size: 5rem;
+    top: 40%;
+    left: 50%;
+}
+
+
+
+.textmain p{
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+main h2{
+    font-size: 2em;
+}
+
+.about{
+    display: flex;
+}
+
+.about article{
+    padding: 50px 0 50px 0;
+    width: 30%;
+}
+
+.adress{
+    display: flex;
+    border: none;
+    font-size: 1.6rem;
+    max-width: 100%;
+    margin-bottom: -29px;
+}
+
+.adress div{
+    color: rgb(71, 66, 153);
+    border-bottom: none;
+    padding-bottom: 60px;
+}
+
+.adress div p, .adress div a{
+    color: black;
+}
+
+.adress div:first-child{
+    border-top: none;
+    padding-top: 15px;
+}
+
+/* *****************************************************************
+                         CSS - DESKTOP ABOUT
+***************************************************************** */
+
+.about{
+    justify-content: center;
+}
+
+.information img{
+    width: 60%;
+    padding-bottom: 20px;
+}
+
+.metier .service h4{
+    display: block;
+    border: 3px solid rgb(71, 66, 153);
+    padding:8px;
+    margin-top: 80px;
+}
+
+.metier img{
+    width: 100%;
+}
+
+.metier{
+    display:grid;
+    grid-template-areas:"h h h"
+                        "a1 a2 a3";
+
+    grid-template-columns:1fr 1fr 1fr;
+    gap:20px;
+}
+
+.metier h2 {
+    grid-area:h;
+}
+
+.metier div:first-of-type {
+    grid-area:a1;
+}
+
+.metier div:nth-of-type(2) {
+    grid-area:a2;
+}
+
+.metier div:nth-of-type(3) {
+    grid-area:a3;
+}
+.metier h4{
+    margin-top: -15px;
+}
+
+.metier p{
+    margin-top: -30px;
+}
+
+#p1, #p2, #p3, #p4, #p5, #p6{
+    margin-top: -20px;
+}
+
+.phone{
+    display: none;
+}
+
+.autoplay img{
+    width: 80%;
+}
+
+.autoplay{
+    padding: 100px 50px 50px 50px;
+}
+
+/* *****************************************************************
+                         CSS - DESKTOP LOCALISATION
+***************************************************************** */
+
+#map{
+    height:450px;
+    width:65%;
+}
+
+/* *****************************************************************
+                         CSS - DESKTOP ADRESS
+***************************************************************** */
+
+.adress{
+    padding-top: 30px;
+    border-top: 2px solid rgb(71, 66, 153);
+}
+
+/* *****************************************************************
+                         CSS - DESKTOP JOB
+***************************************************************** */
+
+ main .job, 
+ .emplois {
+    height: 900px;
+}
+
+.question{
+    padding-top: 50px;
+    margin-top: -20px;
+    text-align: center;
+}
+
+}
+
+/* *****************************************************************
+                         CSS - TABLETTE JOB
+***************************************************************** */
+
+
+@media screen and (min-width: 680px){
+
+body{
+    font-size: 1.8rem;
+}
+
+.metier img{
+    width: 100%;
+}
+
+.metier div{
+    padding: 0 20px 80px 20px ;
+}
+
+/* *****************************************************************
+                         CSS - MENU BURGER
+***************************************************************** */
+
+
+@media screen and (min-width: 1340px){
+
+#menu-button{
+    color: white;
+}
+#menu-button.close{
+    background-color:white;
+}
+
+#menu{
+    transform:translateY(0px);
+    display: flex;
+    flex-direction: row;
+    font-size: 1.4rem;
+    background-color: white;
+    padding: 20px;
+    line-height: 35px;
+    border: white;
+}
+
+#menu a{
+    color: rgb(71, 66, 153);
+    margin: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#menu.show-menu{
+    transform:none;
+}
+
+}
+}
