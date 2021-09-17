@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : ven. 06 août 2021 à 12:14
+-- Généré le : ven. 17 sep. 2021 à 12:46
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.2.19
 
@@ -40,12 +40,9 @@ CREATE TABLE `content` (
 --
 
 INSERT INTO `content` (`message`, `theme`, `jobs`, `idUser`, `id`) VALUES
-('hello ', 'information', '', 20, 87),
-('salut les amis', 'information', '', 21, 88),
-('Bonjour, je suis intéresse par un projet', 'project', '', 22, 89),
-('Salut les amis', 'jobs', 'electricien_chantier', 23, 90),
-('Repondez', 'information', '', 24, 91),
-('Hallo, ich bin interessiert', 'jobs', 'electricien_chantier', 25, 92);
+('salut a tou', 'information', 'electricien', 25, 93),
+('hey', 'jobs', '', 26, 94),
+('salut les amis', 'project', '', 27, 95);
 
 -- --------------------------------------------------------
 
@@ -64,12 +61,32 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`nom`, `mail`, `idUser`) VALUES
-('axel', 'axe.hell63@gmail.com', 20),
-('Jean', 'jean@gmail.com', 21),
-('edouard', 'edouard@gmail.com', 22),
-('claudine', 'cloclo@gmail.com', 23),
-('test', 'test@gmail.com', 24),
-('philippe', 'pilip@gmail.com', 25);
+('patricko', 'patricko@gmail.com', 25),
+('axel', 'axe.hell63@gmail.com', 26);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `utilisateurs`
+--
+
+CREATE TABLE `utilisateurs` (
+  `id` int(11) NOT NULL,
+  `pseudo` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date_inscription` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `utilisateurs`
+--
+
+INSERT INTO `utilisateurs` (`id`, `pseudo`, `email`, `password`, `date_inscription`) VALUES
+(2, 'admin', 'admin@gmail.com', '*4ACFE3202A5FF5CF467898FC58AAB1D615029441', '2021-09-09 14:25:19'),
+(3, 'pero', 'pero@gmail.com', '0db9df7d8e7ff24ae5980d8862caf37b60f0e3ef9165630a8d64247c9d42cfd3', '2021-09-15 10:44:15'),
+(4, 'mehdi', 'mehdi@gogo.com', '744bea40aeb7d7e98966836fec34272dded0e623f24bd63ce013112a3855175c', '2021-09-15 10:54:19'),
+(5, 'hello', 'hello@gmail.com', '2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824', '2021-09-17 14:20:43');
 
 --
 -- Index pour les tables déchargées
@@ -89,6 +106,12 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`idUser`);
 
 --
+-- Index pour la table `utilisateurs`
+--
+ALTER TABLE `utilisateurs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -96,13 +119,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `content`
 --
 ALTER TABLE `content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT pour la table `utilisateurs`
+--
+ALTER TABLE `utilisateurs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
