@@ -17,11 +17,10 @@ function saveUser(PDO $connection, array $data): void
 function saveContent(PDO $connection, array $data): void
 {
     $query = $connection->prepare
-    ('INSERT INTO content (theme,jobs,message,idUser) VALUES (?,?,?,?)');
+    ('INSERT INTO content (theme,message,idUser) VALUES (?,?,?)');
     $idU=$connection->lastInsertId();
     $query->execute([
         $data['themes'],
-        $data['choose_job'],
         $data['message'],
         $idU
     ]);
