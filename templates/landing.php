@@ -10,5 +10,4 @@ if(!isset($_SESSION['user'])){
 $template = 'landing';
 
 // Chargement du layout qui va lui-même charger le template au bon endroit
-require '../templates/layouthome.phtml';
-
+require '../templates/landing.phtml';

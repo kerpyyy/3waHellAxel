@@ -12,5 +12,15 @@
             <td><?= $user['mail']; ?><a href="delete_post.php?id=<?= $user['idUser'] ?>">X</a><a href="edit_post.php?id=<?= $user['idUser'] ?>"><i class="fas fa-cog"></i></a></td>   
         </tr>
     <?php endforeach ?>    
-    </table>  
+    </table>
+    <div id="SplashScreen">
+        <h2 class="center">Casse-briques</h2>
+        <p>Le but est de casse les briques, attention a ne pas faire tomber la balle</p>
+        <p>jeu inspiré du cours de canvas sur le ping-pong</p>
+        <p>1 seul et unique vie</p>
+        <h2 class="center">Commandes du jeu</h2>
+        <p>Utilise la souris pour bouger le paddle</p>
+        <input id="StartButton" type="button" value="Start"/>
+    </div>
+    <canvas id="myCanvas"></canvas>  
 </main>

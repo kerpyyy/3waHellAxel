@@ -6,8 +6,10 @@ require '../templates/landing.php';
 
 $db = getConnection();
 
-if(!isset($_SESSION)){
-    header('Location:index.php');
+// Verification que l'user est connecte si oui on peut delete, si non redirection 
+
+if(!isset($_SESSION['user'])){
+    header('Location:realisations.php');
     die();
 }else{
     deletePost($db, (int) $_GET['id']);
